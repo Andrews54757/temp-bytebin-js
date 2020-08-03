@@ -2,6 +2,7 @@ const Express = require('express')
 const Uuid = require("./uuid.js")
 const Cache = require("./cache.js");
 
+
 module.exports = class ByteBinServer {
     constructor() {
         this.app = Express();
@@ -10,12 +11,17 @@ module.exports = class ByteBinServer {
     }
 
     setupRouting() {
-        this.app.use(Express.raw());
+     
         this.app.use(function(req, res, next) {
             res.header("Access-Control-Allow-Origin", "*");
             next();
         });
-
+        
+        this.app.use(Express.raw({
+            inflate: true,
+            limit: "100mb",
+            type: "*/*"
+        }));
           
         this.app.post("/post", (req,res)=>{
             var body = req.body;
@@ -33,6 +39,8 @@ module.exports = class ByteBinServer {
                 data: body
             });
 
+           
+            res.set("Location",key);
             res.status(200).json({"key": key});
         });
 
