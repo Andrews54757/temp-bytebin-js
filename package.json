@@ -1,0 +1,26 @@
+{
+  "name": "temp-bytebin",
+  "version": "1.0.0",
+  "description": "Lucko's bytebin service in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrews54757/temp-bytebin-js.git"
+  },
+  "keywords": [
+    "bytebin",
+    "nodejs"
+  ],
+  "author": "Andrews54757",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andrews54757/temp-bytebin-js/issues"
+  },
+  "homepage": "https://github.com/Andrews54757/temp-bytebin-js#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
